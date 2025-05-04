@@ -1,0 +1,633 @@
+/* Allow page to scroll */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure the body takes up the full viewport height */
+  overflow-y: auto; /* Enable scrolling if content exceeds the viewport */
+  font-family: Arial, sans-serif;
+}
+
+/* Main container */
+.products-page {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.products-page h1{
+position: relative;
+top:-10px;
+}
+
+/* Top controls section (search bar and add product button) */
+.top-controls {
+  display: flex;
+  flex-direction: row; /* Align search bar and button horizontally */
+  gap: 10px; /* Space between search bar and button */
+  align-items: center; /* Ensure both elements are aligned on the same height */
+  margin-bottom: 20px; /* Space below the controls */
+}
+
+/* Search bar styling */
+.search-bar1 {
+  position: absolute;
+  top: 80px;
+  right: 70px;
+}
+
+.search-bar1 input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%; /* Ensure full-width */
+  box-sizing: border-box;
+}
+
+.search-bar1 input:focus {
+  border-color: #0288d1;
+  outline: none;
+}
+
+/* Search bar styling for archives */
+.search-bar2 {
+  position: absolute;
+  top: 80px;
+  right: 70px;
+}
+
+.search-bar2 input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%; /* Ensure full-width */
+  box-sizing: border-box;
+}
+
+.search-bar2 input:focus {
+  border-color: #0288d1;
+  outline: none;
+}
+
+/* Add Product Button */
+.add-product-button {
+  position: absolute;
+  left:70px ;
+  padding: 12px 20px;
+  background-color: #a41d21;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  top:80px;
+}
+
+.add-product-button:hover {
+  background-color: #641417;
+}
+
+/* Products list container */
+.products-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Ensure space between product list and pagination */
+  position: relative;
+  top: 15px;
+}
+
+/* Product list */
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Individual product card */
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  top: 50px;
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* Product details */
+.product-details {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 20px;
+  gap: 50px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: auto; /* Allow horizontal scrolling */
+}
+
+.product-title,
+.product-category,
+.product-inventory,
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Action buttons */
+.product-actions {
+  margin-top: 15px; /* Space between stocks and buttons */
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+.edit-button,
+.archive-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: auto;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  color: black; /* Adjust color as needed */
+  font-size: 16px; /* Adjust size as needed */
+}
+.archive-button .fa-archive {
+  margin-right: 10px;
+}
+.edit-button .fa-pen {
+  margin-right: 10px;
+}
+.edit-button:hover,
+.archive-button:hover {
+  color: gray; /* Optional: Change color on hover */
+}
+
+/* Pagination */
+.pagination1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  position: relative;
+  top: 10px;
+  
+}
+
+.pagination1-button {
+  padding: 5px 10px;
+  background-color: #a41d21;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination1-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination1-info {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Modal content */
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px; /* Set a max-width for the modal */
+  overflow-y: auto; /* Allow vertical scrolling */
+  max-height: 80vh; /* Set the max-height to 80% of the viewport height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+
+/*Fixing-------------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+  .top-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-product-button {
+    position: absolute;
+    top: 80px;
+    left:30px;
+    padding: 7px 20px;
+  }
+  .products-container{
+    position: relative;
+    top: 20px;
+  }
+  .products-list {
+    grid-template-columns: 1fr; /* Stack products in one column */
+    bottom: 40px;
+  }
+
+  .modal {
+    padding: 10px;
+    width: 90%;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .search-bar1 {
+    position: absolute;
+    display: flex;
+    right: 30px;
+    justify-content: flex-end;
+    top: 80px; 
+  }
+
+  .search-bar2 {
+    position: absolute;
+    display: flex;
+    right: 10px;
+    justify-content: flex-end;
+    top: 110px; 
+  }
+
+  .search-bar1 input {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 220px; /* Adjust width as needed */
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .products-page h1{
+    position: relative;
+    top:-20px;
+    }
+
+  .add-product-button {
+    position: absolute;
+    left:14px;
+
+  }
+
+  .search-bar1 {
+    position: absolute;
+    display: flex;
+    right: 14px;
+    justify-content: flex-end;
+    top: 80px; 
+  }
+  .search-bar2 {
+    position: absolute;
+    display: flex;
+    right: 14px;
+    justify-content: flex-end;
+    top: 110px; 
+  }
+  .search-bar2 input {
+    width: 200px; /* Reduce input width for extra small screens */
+    height:40px;
+    font-size: 16px;
+  }
+
+
+  .search-bar1 input {
+    width: 180px; /* Reduce input width for extra small screens */
+  }
+
+  .products-container{
+    position: relative;
+    top: 20px;
+  }
+
+
+  .products-list {
+    grid-template-columns: 1fr; /* Stack products in one column */
+    top: 40px;
+  }
+  
+}
+
+
+@media screen and (max-width: 368px) {
+  .add-product-button {
+    position: absolute;
+    left:14px;
+    padding: 8px 10px;
+    background-color: #a41d21;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+
+  }
+
+  .search-bar1 {
+    position: absolute;
+    display: flex;
+    right: 14px;
+    justify-content: flex-end;
+    top: 80px; 
+  }
+
+  .search-bar1 input {
+    width: 150px; /* Reduce input width for extra small screens */
+    height:35px;
+    font-size: 12px;
+  }
+
+  .search-bar2 {
+    position: absolute;
+    display: flex;
+    right: 14px;
+    justify-content: flex-end;
+    top: 115px; 
+  }
+
+  .search-bar2 input {
+    width: 150px; /* Reduce input width for extra small screens */
+    height:35px;
+    font-size: 12px;
+  }
+
+  .products-container{
+    position: relative;
+    top: 20px;
+  }
+
+
+  .products-list {
+    grid-template-columns: 1fr; /* Stack products in one column */
+    top: 40px;
+  }
+  
+}
+
+/*Fixing-------------------------------------------------------------------------*/
+
+/* Larger screens (Desktop) */
+@media screen and (min-width: 1024px) {
+  .products-list {
+    grid-template-columns: repeat(3, 1fr); /* Three products per row */
+  }
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styling for inputs and text areas */
+.form-group input,
+.form-group textarea {
+  width: 100%; /* Ensure full width */
+  padding: 10px; /* Consistent padding */
+  border: 1px solid #ccc; /* Lighter border color */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Standard font size */
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
+/* Allow vertical resizing for the textarea */
+.form-group textarea {
+  resize: vertical; /* Allow users to resize vertically */
+}
+.image-preview {
+  display: block;
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button {
+  background-color: #e33;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #e33;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #c00;
+}
+
+.cancel-button:hover {
+  background-color: #c00;
+}
+
+/* Product field labels */
+.field-label {
+  display: block; /* Labels appear above the details */
+  font-size: 14px;
+  color: gray; /* Gray text for labels */
+  margin-bottom: 5px;
+}
+
+.product-field {
+  margin-bottom: 10px; /* Space between fields */
+}
+
+/* Other existing styles */
+.product-title,
+.product-category,
+.product-description,
+.product-price,
+.product-stocks {
+  font-size: 16px;
+  color: #333;
+}
+
+/*Added Code*/
+
+/* Style the image preview container */
+.image-preview-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.image-preview-container img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Remove Image Button */
+.remove-image-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ff4d4d; /* Red background */
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-image-button:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
+
+.remove-image-button:focus {
+  outline: none;
+}
+
+/* Optional: Add a shadow effect for the preview container */
+.image-preview-container {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the Cancel button inside the modal */
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Restore Button Styling */
+.restore-button {
+  background-color: #ff808d; /* Blue background */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background-color 0.3s ease;
+}
+
+.restore-button:hover {
+  background-color: #ce6570; /* Darker blue on hover */
+}
+
+.restore-button i {
+  font-size: 16px; /* Slightly larger icon */
+}
+
+.product-category {
+  font-size: 14px;
+  color: #555; /* Subtle gray */
+  margin-top: 4px;
+}
+
+/* Ensure modal form is scrollable */
+@media (max-width: 768px) {
+  .modal {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+.availability-toggle {
+  background-color: #4caf50; /* Green for Available */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.availability-toggle:not(:enabled) {
+  background-color: #f44336; /* Red for Not Available */
+}
+  

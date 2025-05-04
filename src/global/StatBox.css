@@ -1,0 +1,43 @@
+.stat-box {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+  
+  .stat-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .stat-percentage {
+    color: #4caf50;
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  
+  .stat-percentage .arrow {
+    font-size: 1.2rem;
+  }
+  
+  .stat-description {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    opacity: 0.6;
+  }
+  

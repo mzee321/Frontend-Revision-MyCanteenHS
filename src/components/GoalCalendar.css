@@ -1,0 +1,29 @@
+/* Goal Calendar styling */
+.goal-calendar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0;
+    background-color: transparent; /* Ensures the background is transparent */
+  }
+  
+  /* Remove box-shadow and black line around the calendar */
+  .react-calendar {
+    width: 100%;
+    max-width: 600px; /* Ensures the calendar doesn't stretch too wide */
+    border-radius: 10px;
+    background-color: transparent; /* Make calendar background transparent */
+    box-shadow: none; /* Remove box-shadow */
+    border: none; /* Remove any borders */
+  }
+  
+  /* Make sure calendar looks good on mobile */
+  @media (max-width: 768px) {
+    .react-calendar {
+      max-width: 100%; /* Full width on mobile */
+      font-size: 12px;  /* Slightly reduce the font size on smaller screens */
+    }
+  }
+  

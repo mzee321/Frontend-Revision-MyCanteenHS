@@ -1,0 +1,53 @@
+.line-chart-container {
+    position: relative;
+    top: -25px;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .year-dropdown {
+    position: relative;
+    top: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .year-dropdown label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .year-dropdown select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styling for Small Screens (max-width: 760px) */
+  @media (max-width: 760px) {
+    .line-chart-container {
+      height: 220px; /* Adjust height */
+      width: 95%; /* Make it fit the smaller screen */
+      padding: 10px;
+    }
+  
+    .year-dropdown {
+      font-size: 14px; /* Reduce font size */
+      text-align: center;
+    }
+  
+    .year-dropdown label {
+      font-size: 14px;
+    }
+  
+    .year-dropdown select {
+      font-size: 12px;
+      padding: 4px;
+    }
+  }
+  

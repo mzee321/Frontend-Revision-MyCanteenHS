@@ -1,0 +1,176 @@
+/* Base styles for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0px 1px 8px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.navbar-logo {
+  height: 50px;
+}
+
+.navbar-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-pic {
+  font-size: 20px;
+}
+
+.username {
+  font-size: 15px;
+}
+
+.dropdown-icon {
+  cursor: pointer;
+}
+
+.sub-menu-wrap {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-menu-wrap:hover {
+  display: block;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+/* Mobile styles */
+.hamburger-icon {
+  display: none; /* Hide by default */
+  cursor: pointer;
+}
+
+/* Mobile layout adjustments */
+.nav-links {
+  display: flex;
+}
+
+.nav-links.open {
+  display: block;
+}
+
+.navbar .nav-links ul {
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+
+  .navbar-title {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+
+  .user-menu {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  /* Display hamburger icon for small screens */
+  .hamburger-icon {
+    display: block;
+  }
+
+  /* Hide menu by default on small screens */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px 8px;
+  }
+
+  .navbar-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links li a {
+    font-size: 13px;
+  }
+
+  .user-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .user-pic {
+    font-size: 18px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+}

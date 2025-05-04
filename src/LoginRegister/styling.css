@@ -1,0 +1,286 @@
+/* Background styling */
+.background {
+  background: url('./imagefiles/campus-lawn-1.png') no-repeat center center fixed; /* Fix background on scroll */
+  background-size: cover; /* Ensures the image scales to cover the entire screen */
+  position: relative; /* Keeps the background in place */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%; /* Ensures it takes at least full height of the screen */
+  overflow: hidden; /* Prevents overflow of content beyond the background */
+}
+
+.background::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for the background */
+  z-index: 1; /* Ensures the overlay is on top of the background but below content */
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 80vh; /* Limits the height */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: auto; /* Allows scrolling when content overflows */
+}
+
+
+  
+/* Login form styling */
+.login-form {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto; /* Allows scrolling inside the form when content overflows */
+  max-height: 90vh; /* Limits the height of the form content */
+}
+
+
+.login-form h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.quote {
+  text-align: center;
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 5px;
+  background-color: #f7fbff;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #a41d21;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #b71e24;
+}
+
+/*Added Code*/
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
+
+
+
+
+.signup-container{
+  position: relative;
+  bottom:-20px;
+
+}
+
+/*-------------------------------------------*/
+
+
+.extras {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.extras a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.extras a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: 2rem;
+}
+
+/* Login image styling */
+.login-image {
+  flex: 1;
+  background: url('./imagefiles/login-art-.jpeg') no-repeat center center;
+  background-size: cover;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.GoogleBtn{
+  position: relative;
+  top: -15px;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image {
+    display: none; /* Hide login image for smaller resolutions */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login-image {
+    min-width: 150px; /* Reduce the size of the image */
+    min-height: 150px;
+  }
+}
+
+.profile-preview {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 1rem;
+}
+
+.profile-picture-preview {
+width: 170px;
+height: 170px;
+border-radius: 50%; /* Makes the image circular */
+object-fit: cover; /* Ensures the image is not distorted */
+border: 2px solid #ccc; /* Optional: Add a border for aesthetics */
+}
+
+.preview-text {
+margin-top: 0.5rem;
+font-size: 0.9rem;
+color: #666;
+}
+
+
+/* OTP Modal Styles */
+.otp-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;
+  width: 300px;
+}
+
+.otp-modal h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.otp-modal input {
+  width: 94%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.otp-modal button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.otp-modal button:first-of-type {
+  background-color: #a41d21; /* Green for Verify */
+  color: white;
+}
+
+.otp-modal button:first-of-type:hover {
+  background-color: #a41d21;
+}
+
+.otp-modal button:last-of-type {
+  background-color: #a41d21; /* Red for Cancel */
+  color: white;
+}
+
+.otp-modal button:last-of-type:hover {
+  background-color: #a41d21;
+}
+
+/* Dark background overlay */
+.otp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+
+@media (max-width: 350px) {
+.otp-modal{
+  width: 238px;
+}
+}
+

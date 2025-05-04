@@ -1,0 +1,98 @@
+.vendors-container {
+    padding: 20px;
+    position: relative;
+    top: -56px;
+  }
+  
+  .page-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .page-title1{
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 21px;
+    color: #a41d21;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+    max-width: 400px;
+  }
+  
+  .vendors-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .vendors-table th,
+  .vendors-table td {
+    padding: 5px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .vendors-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+  
+  .action-btn {
+    background: none;
+    border: none;
+    padding: 20px;
+    /* margin-right: 8px;
+    cursor: pointer;
+    font-size: 1rem; */
+  }
+  
+  .edit-vendor-btn {
+    color: #007bff;
+  }
+  
+  .delete-vendor-btn {
+    color: #A41D21;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+  }
+  
+  .pagination-btn {
+    background-color: #eee;
+    border: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pagination-btn.active {
+    background-color: #A41D21;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+
+  /*Add Vendor Button*/
+
+  .add-vendor-button {
+    background-color: #A41D21;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem; /* replaces mb-3 */
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-vendor-button:hover {
+    background-color: #87171b;
+  }

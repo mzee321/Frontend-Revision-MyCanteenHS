@@ -1,0 +1,372 @@
+/* NAVBAR */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Spread items evenly */
+  align-items: center;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0;
+  height: 60px;
+  background-color: #fff;
+  width: 120%;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar-logo img {
+  width: 50px;
+  margin-left: 15px; /* Adjust margin for spacing */
+}
+
+h5.navbar-title {
+  text-decoration: none;
+  color: #000;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.nav-links ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links ul li {
+  color: #000;
+  list-style: none;
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li button {
+  border: none;
+  background: transparent;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #000000;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none; /* Default: hidden */
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 18px; /* Larger padding for better tap area */
+}
+
+/* Hamburger Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  color: black;
+}
+
+.dropdown-menu li button:hover {
+  background: #f5f5f5;
+  color: #a41d21;
+}
+
+/* User Menu */
+.user-menu {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+}
+
+.user-pic{
+  cursor: pointer;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.username {
+  font-size: 16px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1500;
+  width: 200px;
+  padding: 10px;
+}
+
+.sub-menu {
+  padding: 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.sub-menu-link i {
+  margin-right: 10px;
+}
+
+.sub-menu-link:hover {
+  background-color: #f1f1f1;
+}
+
+/* MOBILE INTERFACE (748px to 768px and below) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+    margin-right: 18px; /* Spacing for better tap area */
+    padding: 18px;
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links on mobile */
+  }
+
+  .navbar-title {
+    display: none; /* Hide the title on mobile */
+  }
+
+  .navbar-logo img {
+    width: 50px; /* Larger logo for better visibility */
+    margin-left: 12px; /* Adjust margin for spacing */
+  }
+
+  .dropdown-menu.open {
+    display: block;
+  }
+
+  .user-menu {
+    display: none; /* Hide user menu on mobile */
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between; /* Adjust layout for mobile */
+    padding: 10px;
+  }
+}
+
+/* PC INTERFACE (Min Width: 769px and above) */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide hamburger menu on PC */
+  }
+
+  .nav-links {
+    display: flex; /* Show navigation links */
+  }
+
+  .navbar-title {
+    display: block; /* Show the title on PC */
+  }
+
+  .navbar-logo img {
+    width: 50px; /* Default logo size */
+    margin-left: 15px;
+  }
+
+  .user-menu {
+    display: flex; /* Show user menu on PC */
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between; /* Adjust layout for PC */
+    padding: 10px;
+  }
+}
+
+/* Navbar container */
+.header {
+  display: flex;
+  justify-content: space-between; /* Space out items */
+  align-items: center;
+  background: white;
+  width: 100%; /* Ensures the navbar takes full width */
+  box-shadow: 0px 1px 8px 2px rgba(0, 0, 0, 0.25);
+  padding: 0; 
+}
+
+/* Navbar Logo */
+.navbar-logo {
+  height: 50px;
+}
+
+/* Navbar Title */
+.navbar-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Navbar Links */
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Space between navbar items */
+}
+
+/* Links */
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+/* User Menu */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hamburger Menu (for mobile) */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show the hamburger menu on smaller screens */
+  }
+  .nav-links {
+    display: none; /* Hide the links on smaller screens */
+  }
+  .header {
+    justify-content: space-between;
+    padding: 0px; /* Reduce padding on smaller screens */
+  }
+}
+
+/* Show dropdown menu when hamburger is clicked */
+.dropdown-menu.open {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  z-index: 10;
+}
+
+/* Navbar items hover effect */
+.nav-links ul li:hover {
+  text-decoration: underline;
+}
+
+/* Profile Picture Styles for Mobile */
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px; /* Adds space between hamburger and profile icon */
+  cursor: pointer;
+}
+
+/* Move the hamburger icon a little bit more to the left */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 40px; /* Increase this value to give more space */
+}
+
+.profile-picture img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular image */
+}
+
+/* Additional styles for alignment */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 18px;
+  margin-left: 10px;
+}
+

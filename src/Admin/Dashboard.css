@@ -1,0 +1,69 @@
+/* src/components/Dashboard.css */
+
+
+  /* stat box animation */
+  .stat-box {
+    /* background-color: #1e1e2f; */
+    background-color: #A41D21;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .stat-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .stat-percentage {
+    color: #4caf50;
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+  
+  .stat-percentage .arrow {
+    font-size: 1.4rem;
+  }
+  
+  .stat-description {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    opacity: 0.6;
+  }
+  
+
+  /* INSTRUCTION */
+
+  .instruction-box {
+    width: 300px;
+    background: #e9f4fb;
+    border: 1px solid #b4daee;
+    border-radius: 6px;
+    padding: 16px;
+  }
+  
+  .instruction-header {
+    background: #d4ecf9;
+    padding: 10px;
+    font-weight: bold;
+    color: #136d9b;
+    border-radius: 4px 4px 0 0;
+    margin: -16px -16px 16px -16px;
+    border-bottom: 1px solid #b4daee;
+  }
